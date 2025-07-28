@@ -13,14 +13,10 @@ RUN pip install --no-cache-dir --upgrade -r requirements.txt
 # Copy the rest of your application code to the container
 COPY . .
 
-# --- NEW LINES TO FIX PERMISSION ERROR ---
-# Copy the pre-build script and make it executable
-COPY pre_build_script.sh .
-RUN chmod +x pre_build_script.sh
-
-# Run the pre-build script
-RUN ./pre_build_script.sh
-# --- END OF NEW LINES ---
+# --- FINAL PERMISSION FIX ---
+# Give full write permissions to the entire /app directory.
+# This solves the '/app/.chainlit' error and any other permission issues.
+RUN chmod -R 777 /app
 
 # Make port 7860 available to the world outside this container
 EXPOSE 7860
