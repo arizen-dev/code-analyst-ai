@@ -1,43 +1,32 @@
----
-title: AI Codebase Analyst
-emoji: 🚀
-colorFrom: blue
-colorTo: green
-sdk: docker
-app_file: app.py
-pinned: false
----
-
 # AI Codebase Analyst: Chat with any GitHub Repository
 
-This project is an advanced AI agent capable of ingesting an entire public GitHub repository, performing a high-level architectural analysis, and then answering detailed technical questions about the code. It serves as a powerful tool for developers, accelerating code comprehension and onboarding.
-
-This project showcases expertise in building complex, agentic AI systems that go beyond simple document Q&A to interact with file systems, parse structured code data, and provide valuable, context-aware insights for technical teams.
+This project is an advanced AI agent that ingests public GitHub repositories, performs an architectural analysis, and answers detailed technical questions about the code to accelerate developer onboarding.
 
 ---
 
-### 🚀 High-Level Workflow
+### 🎬 Video Walkthrough
 
-The user provides a GitHub URL, and the system provides an instant architectural summary followed by an interactive Q&A session.
+Since this is a developer tool designed to be run locally, the best way to see it in action is to watch the video walkthrough.
 
-![User Workflow Diagram](diagrams/user-workflow.png)
+[**WATCH THE 2-MINUTE VIDEO DEMO HERE**](https://www.loom.com/...)  <-- **IMPORTANT: Replace this with your real Loom or YouTube link.**
 
 ---
 
 ### ✨ Features
 - **GitHub Repository Ingestion:** Clones any public GitHub repository via its URL.
 - **Automated Architectural Summary:** Provides an immediate high-level analysis of the project's purpose, tech stack, and key files.
-- **Deep Code Q&A:** Leverages a RAG pipeline built on a vector store of the entire codebase.
-- **Language-Aware Splitting:** Uses `langchain` and `tree-sitter` to intelligently chunk code files while preserving structure.
-- **Modular & Professional Code Structure:** Organized into separate modules for UI, core logic, and prompts.
-- **Safe Resource Management:** Automatically creates and cleans up temporary directories.
+- **Deep Code Q&A:** Leverages a RAG pipeline to answer specific questions about the codebase.
+- **Language-Aware Splitting:** Uses `langchain` and `tree-sitter` for intelligent, structure-preserving code chunking.
+- **Modular & Professional Code Structure:** Demonstrates best practices by separating UI, core logic, and prompts.
+- **Safe Resource Management:** Automatically creates and cleans up temporary directories for cloned repositories.
 
 ---
 
-### 🛠️ Technical Architecture
+### 🛠️ Technical Architecture & Workflow
 
 The system uses a two-phase process: a one-time indexing pipeline to prepare the code, and an interactive Q&A pipeline for analysis.
 
+![User Workflow Diagram](diagrams/user-workflow.png)
 ![System Architecture Diagram](diagrams/system-architecture.png)
 
 <details>
@@ -53,25 +42,21 @@ The core of the Q&A functionality is a Retrieval-Augmented Generation (RAG) pipe
 
 ### ⚙️ How to Run Locally
 
-1.  **Prerequisite:** You must have `git` installed on your system.
+1.  **Prerequisites:** You must have `git` and `git-lfs` installed on your system.
 
 2.  **Clone this repository:**
     ```bash
-    git clone https://github.com/your-username/ai-code-analyst.git
-    cd ai-code-analyst
+    git clone https://github.com/arizen-dev/code-analyst-ai.git
+    cd code-analyst-ai
     ```
 
 3.  **Create a virtual environment and install dependencies:**
     ```bash
-    # For Mac/Linux
-    python3 -m venv venv
-    source venv/bin/activate
-
     # For Windows
     python -m venv venv
     .\venv\Scripts\activate
-    
-    # Install all required packages, including parsers
+
+    # Install all required packages
     pip install -r requirements.txt --upgrade
     ```
 
