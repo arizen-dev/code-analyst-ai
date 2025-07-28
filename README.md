@@ -1,3 +1,13 @@
+---
+title: AI Codebase Analyst
+emoji: 🚀
+colorFrom: blue
+colorTo: green
+sdk: docker
+app_file: app.py
+pinned: false
+---
+
 # AI Codebase Analyst: Chat with any GitHub Repository
 
 This project is an advanced AI agent capable of ingesting an entire public GitHub repository, performing a high-level architectural analysis, and then answering detailed technical questions about the code. It serves as a powerful tool for developers, accelerating code comprehension and onboarding.
