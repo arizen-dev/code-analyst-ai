@@ -13,8 +13,16 @@ RUN pip install --no-cache-dir --upgrade -r requirements.txt
 # Copy the rest of your application code to the container
 COPY . .
 
+# --- NEW LINES TO FIX PERMISSION ERROR ---
+# Copy the pre-build script and make it executable
+COPY pre_build_script.sh .
+RUN chmod +x pre_build_script.sh
+
+# Run the pre-build script
+RUN ./pre_build_script.sh
+# --- END OF NEW LINES ---
+
 # Make port 7860 available to the world outside this container
-# This is the standard port for HF Spaces
 EXPOSE 7860
 
 # Command to run the application
