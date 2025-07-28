@@ -1,0 +1,12 @@
+chainlit
+langchain
+langchain-openai
+langchain-community
+langchain-text-splitters
+faiss-cpu
+tiktoken
+beautifulsoup4
+esprima
+python-dotenv
+tree-sitter
+tree-sitter-languages
